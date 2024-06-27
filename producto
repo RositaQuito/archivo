@@ -1,0 +1,70 @@
+class Producto {
+    // Atributos ClaseProducto
+    private String nombre;
+    private double precio;
+    
+    // Metodos ClaseProducto
+    public String getNombre(){
+        return nombre;
+    }
+    public void setNombre(String nombre){
+     this.nombre = nombre;
+    }
+    public double getPrecio(){
+        return precio;
+    }
+    public void setPrecio(double precio){
+        this.precio = precio;
+    }
+}
+
+//clase derivada llamada Electronico
+class Electronico extends Producto{
+    // Atributo ClaseElectronico
+    private int garantia;
+    
+    // Metodos ClaseElectronico
+    public int getGarantia(){
+    return garantia;
+    }
+public void setGarantia(int garantia){
+    this.garantia = garantia;
+}
+public void mostrarInformacion(){
+    System.out.println ( " Nombre " + getNombre());
+    System.out.println ( " Precio " + getPrecio());
+    System.out.println ( " Garantia"  + garantia + " meses ");
+}
+}
+
+//clase derivada llamada Telefono 
+class Telefono extends Electronico{
+    // Atributo ClaseTelefono
+    private String numeroTelefono;
+
+    // Metodos ClaseTelefono
+public String getNumeroTelefono(){
+return numeroTelefono;
+}
+public void setNumeroTelefono(String numeroTelefono){
+this.numeroTelefono = numeroTelefono;
+}
+public void mostrarInformacionCompleta (){
+
+    mostrarInformacion ();
+    System.out.println("Numero de Telefono" + numeroTelefono);
+}
+}
+public class Main {
+    
+    public static void main(String[] args) {
+        Telefono telefono1 = new Telefono();
+        telefono1.setNombre ( "iPhone");
+        telefono1.setPrecio ( 921.00);
+        telefono1.setGarantia ( 12);
+        telefono1.setNumeroTelefono ( " 0952781633");
+        
+        telefono1.mostrarInformacionCompleta();
+    }    
+}
+
